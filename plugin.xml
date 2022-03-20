@@ -3,11 +3,11 @@
 <plugin id="cordova-plugin-camera-preview" version="0.12.3" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
 
    <name>cordova-plugin-camera-preview</name>
-  <description>Cordova plugin that allows camera interaction from HTML code. Show camera preview popup on top of the HTML.</description>
-  <license>Apache 2.0</license>
+  <description>Complemento de Cordova que permite la interacción de la cámara desde código HTML. Muestra la ventana emergente de vista previa de la cámara en la parte superior del HTML.</description>
+  <licencia>Apache 2.0</licencia>
   <keywords>cordova,phonegap,ecosystem:cordova,cordova-android,cordova-ios,android,ios,ionic,camera,cam,camera-preview,preview</keywords>
-  <repo>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git</repo>
-  <issue>https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/issues</issue>
+  <repo>https://github.com/Danielsalamank/cordova-plugin-camera-preview.git</repo>
+  <issue>https://github.com/Danielsalamank/cordova-plugin-camera-preview/issues</issue>
 
   <js-module src="www/CameraPreview.js" name="CameraPreview">
     <clobbers target="CameraPreview" />
@@ -25,15 +25,15 @@
 
     <framework src="androidx.exifinterface:exifinterface:1.2.0" />
 
-    <config-file target="res/xml/config.xml" parent="/*">
+    <!-- <config-file target="res/xml/config.xml" parent="/*">
       <feature name="CameraPreview">
         <param name="android-package" value="com.cordovaplugincamerapreview.CameraPreview" />
         <param name="onload" value="true" />
       </feature>
-    </config-file>
+    </config-file> -->
 
     <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-feature android:name="android.hardware.camera" android:required="false"/>
+      <!-- <uses-feature android:name="android.hardware.camera" android:required="false"/> -->
       <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
       <uses-permission android:name="android.permission.CAMERA" />
       <uses-permission android:name="android.permission.RECORD_AUDIO" />

@@ -47,17 +47,17 @@ CameraPreview.startCamera = function(options, onSuccess, onError) {
   options.storeToFile = options.storeToFile || false;
 
   exec(onSuccess, onError, PLUGIN_NAME, "startCamera", [
-    options.x, 
-    options.y, 
-    options.width, 
-    options.height, 
-    options.camera, 
-    options.tapPhoto, 
-    options.previewDrag, 
-    options.toBack, 
-    options.alpha, 
-    options.tapFocus, 
-    options.disableExifHeaderStripping, 
+    options.x,
+    options.y,
+    options.width,
+    options.height,
+    options.camera,
+    options.tapPhoto,
+    options.previewDrag,
+    options.toBack,
+    options.alpha,
+    options.tapFocus,
+    options.disableExifHeaderStripping,
     options.storeToFile
   ]);
 };
@@ -232,7 +232,7 @@ CameraPreview.getBlob = function (url, onSuccess, onError) {
   xhr.onload = function() {
     if (xhr.status != 0 && (xhr.status < 200 || xhr.status >= 300)) {
       if (isFunction(onError)) {
-        onError('Local request failed');
+        onError('Solicitud local fallida');
       }
       return;
     }
@@ -243,7 +243,7 @@ CameraPreview.getBlob = function (url, onSuccess, onError) {
   };
   xhr.onerror = function() {
     if (isFunction(onError)) {
-      onError('Local request failed');
+      onError('Solicitud local fallida');
     }
   };
   xhr.open('GET', url);

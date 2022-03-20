@@ -1,135 +1,135 @@
-# Cordova Plugin Camera Preview
-<a href="https://badge.fury.io/js/cordova-plugin-camera-preview" target="_blank"><img height="21" style='border:0px;height:21px;' border='0' src="https://badge.fury.io/js/cordova-plugin-camera-preview.svg" alt="NPM Version"></a>
-<a href='https://www.npmjs.org/package/cordova-plugin-camera-preview' target='_blank'><img height='21' style='border:0px;height:21px;' src='https://img.shields.io/npm/dt/cordova-plugin-camera-preview.svg?label=NPM+Downloads' border='0' alt='NPM Downloads' /></a>
+# Vista previa de la cámara del complemento Cordova
+<a href="https://badge.fury.io/js/cordova-plugin-camera-preview" target="_blank"><img height="21" style='border:0px;height:21px;' border='0' src="https://badge.fury.io/js/cordova-plugin-camera-preview.svg" alt="Versión NPM"></a>
+<a href='https://www.npmjs.org/package/cordova-plugin-camera-preview' target='_blank'><img height='21' style='border:0px;height:21px;' src='https://img.shields.io/npm/dt/cordova-plugin-camera-preview.svg?label=NPM+Descargas' border='0' alt='NPM Descargas' /></a>
 
-Cordova plugin that allows camera interaction from Javascript and HTML
+Complemento de Cordova que permite la interacción de la cámara desde Javascript y HTML
 
-**Releases are being kept up to date when appropriate. However, this plugin is under constant development. As such it is recommended to use master to always have the latest fixes & features.**
+**Los comunicados se mantienen actualizados cuando corresponde. Sin embargo, este complemento está en constante desarrollo. Como tal, se recomienda usar el maestro para tener siempre las últimas correcciones y características.**
 
-**PR's are greatly appreciated.**
+**Las relaciones públicas son muy apreciadas.**
 
-# Features
+# Características
 
 <ul>
-  <li>Start a camera preview from HTML code</li>
-  <li>Take Photos and Snapshots</li>
-  <li>Maintain HTML interactivity</li>
-  <li>Drag the preview box</li>
-  <li>Set camera color effect</li>
-  <li>Send the preview box to back of the HTML content</li>
-  <li>Set a custom position for the camera preview box</li>
-  <li>Set a custom size for the preview box</li>
-  <li>Set a custom alpha for the preview box</li>
-  <li>Set the focus mode, zoom, color effects, exposure mode, white balance mode and exposure compensation</li>
-  <li>Tap to focus</li>
-  <li>Record Videos</li>
+  <li>Iniciar una vista previa de la cámara desde el código HTML</li>
+  <li>Hacer fotos e instantáneas</li>
+  <li>Mantener la interactividad HTML</li>
+  <li>Arrastre el cuadro de vista previa</li>
+  <li>Establecer el efecto de color de la cámara</li>
+  <li>Envíe el cuadro de vista previa al reverso del contenido HTML</li>
+  <li>Establezca una posición personalizada para el cuadro de vista previa de la cámara</li>
+  <li>Establezca un tamaño personalizado para el cuadro de vista previa</li>
+  <li>Establezca un alfa personalizado para el cuadro de vista previa</li>
+  <li>Configure el modo de enfoque, el zoom, los efectos de color, el modo de exposición, el modo de balance de blancos y la compensación de exposición</li>
+  <li>Toca para enfocar</li>
+  <li>Grabar vídeos</li>
 </ul>
 
-# Installation
+# Instalación
 
-Use any one of the installation methods listed below depending on which framework you use.
+Utilice cualquiera de los métodos de instalación enumerados a continuación según el marco que utilice.
 
-To install the master version with latest fixes and features
-
-```
-cordova plugin add https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git
-
-ionic cordova plugin add https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git
-
-meteor add cordova:cordova-plugin-camera-preview@https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git#[latest_commit_id]
-
-<plugin spec="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git" source="git" />
-```
-
-or if you want to use the last released version on npm
+Para instalar la versión maestra con las últimas correcciones y características
 
 ```
-cordova plugin add cordova-plugin-camera-preview
+Complemento cordova agregar https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git
 
-ionic cordova plugin add cordova-plugin-camera-preview
+Complemento cordova iónico agregar https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git
 
-meteor add cordova:cordova-plugin-camera-preview@X.X.X
+meteoro agregar cordova:cordova-plugin-camera-preview@https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git#[latest_commit_id]
+
+<especificación del complemento="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git" source="git" />
+```
+
+o si desea utilizar la última versión publicada en npm
+
+```
+Complemento cordova agregar cordova-plugin-camera-preview
+
+Complemento iónico de cordova agregar cordova-plugin-camera-preview
+
+meteorito añadir cordova:cordova-plugin-camera-preview@X.X.X
 
 <gap:plugin name="cordova-plugin-camera-preview" />
 ```
 
-#### iOS Quirks
-1. It is not possible to use your computers webcam during testing in the simulator, you must device test.
-2. If you are developing for iOS 10+ you must also add the following to your config.xml
+#### peculiaridades de iOS
+1. No es posible usar la cámara web de su computadora durante la prueba en el simulador, debe probar el dispositivo.
+2. Si está desarrollando para iOS 10+, también debe agregar lo siguiente a su config.xml
 
 ```xml
-<config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription" overwrite="true">
-  <string>Allow the app to use your camera</string>
-</config-file>
+<plataforma del archivo de configuración="ios" target="*-Info.plist" parent="NSCameraUsageDescription" overwrite="true">
+  <string>Permitir que la aplicación use tu cámara</string>
+</archivo de configuración>
 
-<!-- or for Phonegap -->
+<!-- o para Phonegap -->
 
-<gap:config-file platform="ios" target="*-Info.plist" parent="NSCameraUsageDescription" overwrite="true">
-  <string>Allow the app to use your camera</string>
-</gap:config-file>
+<brecha:plataforma del archivo de configuración="ios" target="*-Info.plist" parent="NSCameraUsageDescription" overwrite="true">
+  <string>Permitir que la aplicación use tu cámara</string>
+</gap:archivo de configuración>
 ```
 
-#### Android Quirks
+#### peculiaridades de Android
 
-1. When using the plugin for older devices, the camera preview will take the focus inside the app once initialized. In order to prevent the app from closing when a user presses the back button, the event for the camera view is disabled. If you still want the user to navigate, you can add a listener for the back event for the preview (see <code>[onBackButton](#onBackButton)</code>)
+1. Al usar el complemento para dispositivos más antiguos, la vista previa de la cámara tomará el foco dentro de la aplicación una vez inicializada. Para evitar que la aplicación se cierre cuando un usuario presiona el botón Atrás, el evento para la vista de la cámara está deshabilitado. Si aún desea que el usuario navegue, puede agregar un oyente para el evento de retroceso para la vista previa (consulte <code>[onBackButton](#onBackButton)</code>)
 
 # Methods
 
 ### startCamera(options, [successCallback, errorCallback])
 
-Starts the camera preview instance.
+Inicia la instancia de vista previa de la cámara.
 <br>
 
-<strong>Options:</strong>
-All options stated are optional and will default to values here
+<strong>Opciones:</strong>
+Todas las opciones indicadas son opcionales y tendrán valores predeterminados aquí
 
-* `x` - Defaults to 0
-* `y` - Defaults to 0
-* `width` - Defaults to window.screen.width
-* `height` - Defaults to window.screen.height
-* `camera` - See <code>[CAMERA_DIRECTION](#camera_Settings.CameraDirection)</code> - Defaults to front camera
-* `toBack` - Defaults to false - Set to true if you want your html in front of your preview
-* `tapPhoto` - Defaults to true - Does not work if toBack is set to false in which case you use the takePicture method
-* `tapFocus` - Defaults to false - Allows the user to tap to focus, when the view is in the foreground
-* `previewDrag` - Defaults to false - Does not work if toBack is set to false
-* `storeToFile` - Defaults to false - Capture images to a file and return back the file path instead of returning base64 encoded data.
-* `disableExifHeaderStripping` - Defaults to false - **Android Only** - Disable automatic rotation of the image, and let the browser deal with it (keep reading on how to achieve it)
+* `x` - Por defecto es 0
+* `y` - Por defecto es 0
+* `width` - Por defecto es window.screen.width
+* `altura` - Por defecto es window.screen.height
+* `camera`: consulta <code>[CAMERA_DIRECTION](#camera_Settings.CameraDirection)</code>: el valor predeterminado es la cámara frontal
+* `toBack` - Predeterminado en falso - Establézcalo en verdadero si desea que su html esté delante de su vista previa
+* `tapPhoto`: el valor predeterminado es verdadero: no funciona si toBack está configurado en falso, en cuyo caso se usa el método takePicture
+* `tapFocus`: el valor predeterminado es falso: permite al usuario tocar para enfocar, cuando la vista está en primer plano
+* `previewDrag` - Predeterminado en falso - No funciona si toBack está configurado en falso
+* `storeToFile`: el valor predeterminado es falso: captura imágenes en un archivo y devuelve la ruta del archivo en lugar de devolver los datos codificados en base64.
+* `disableExifHeaderStripping`: el valor predeterminado es falso. **Solo Android**: deshabilite la rotación automática de la imagen y deje que el navegador se ocupe de ella (siga leyendo sobre cómo lograrlo)
 
 ```javascript
-let options = {
+dejar opciones = {
   x: 0,
   y: 0,
-  width: window.screen.width,
-  height: window.screen.height,
-  camera: CameraPreview.CAMERA_DIRECTION.BACK,
-  toBack: false,
-  tapPhoto: true,
-  tapFocus: false,
-  previewDrag: false,
-  storeToFile: false,
-  disableExifHeaderStripping: false
+  ancho: ventana.pantalla.ancho,
+  altura: ventana.pantalla.altura,
+  cámara: CameraPreview.CAMERA_DIRECTION.BACK,
+  hacia atrás: falso,
+  toqueFoto: cierto,
+  tapFocus: falso,
+  vista previaArrastrar: falso,
+  almacenar en archivo: falso,
+  deshabilitarExifHeaderStripping: falso
 };
 
-CameraPreview.startCamera(options);
+CameraPreview.startCamera(opciones);
 ```
 
-When setting `toBack` to true, remember to add the style below on your app's HTML or body element:
+Al establecer `toBack` en verdadero, recuerda agregar el estilo a continuación en el HTML o el elemento del cuerpo de tu aplicación:
 
 ```css
-html, body, .ion-app, .ion-content {
-  background-color: transparent;
+html, cuerpo, .ion-app, .ion-content {
+  color de fondo: transparente;
 }
 ```
 
-When both `tapFocus` and `tapPhoto` are true, the camera will focus, and take a picture as soon as the camera is done focusing.
+Cuando tanto `tapFocus` como `tapPhoto` son verdaderos, la cámara enfocará y tomará una foto tan pronto como la cámara termine de enfocar.
 
-If you capture large images in Android you may notice that performace is poor, in those cases you can set `disableExifHeaderStripping` to true and instead just add some extra Javascript/HTML to get a proper display of your captured images without risking your application speed.
+Si captura imágenes grandes en Android, puede notar que el rendimiento es deficiente; en esos casos, puede establecer `disableExifHeaderStripping` en verdadero y, en su lugar, solo agregue Javascript/HTML adicional para obtener una visualización adecuada de sus imágenes capturadas sin arriesgar la velocidad de su aplicación.
 
-When capturing large images you may want them to be stored into a file instead of having them base64 encoded, as enconding at least on Android is very expensive. With the feature `storeToFile` enabled the plugin will capture the image into a temporary file inside the application temporary cache (the same place where Cordova will extract your assets). This method is better used with `disableExifHeaderStripping` to get the best possible performance.
+Al capturar imágenes grandes, es posible que desee almacenarlas en un archivo en lugar de codificarlas en base64, ya que la codificación, al menos en Android, es muy costosa. Con la función `storeToFile` habilitada, el complemento capturará la imagen en un archivo temporal dentro del caché temporal de la aplicación (el mismo lugar donde Cordova extraerá sus activos). Este método se usa mejor con `disableExifHeaderStripping` para obtener el mejor rendimiento posible.
 
-### stopCamera([successCallback, errorCallback])
+### detener la cámara ([devolución de llamada exitosa, devolución de llamada de error])
 
-<info>Stops the camera preview instance.</info><br/>
+<info>Detiene la instancia de vista previa de la cámara.</info><br/>
 
 ```javascript
 CameraPreview.stopCamera();
@@ -137,77 +137,77 @@ CameraPreview.stopCamera();
 
 ### switchCamera([successCallback, errorCallback])
 
-<info>Switch between the rear camera and front camera, if available.</info><br/>
+<info>Cambia entre la cámara trasera y la cámara delantera, si está disponible.</info><br/>
 
 ```javascript
 CameraPreview.switchCamera();
 ```
 
-### show([successCallback, errorCallback])
+### mostrar ([devolución de llamada exitosa, devolución de llamada de error])
 
-<info>Show the camera preview box.</info><br/>
+<info>Muestra el cuadro de vista previa de la cámara.</info><br/>
 
 ```javascript
 CameraPreview.show();
 ```
 
-### hide([successCallback, errorCallback])
+### ocultar ([devolución de llamada exitosa, devolución de llamada de error])
 
-<info>Hide the camera preview box.</info><br/>
+<info>Ocultar el cuadro de vista previa de la cámara.</info><br/>
 
 ```javascript
 CameraPreview.hide();
 ```
 
-### takePicture(options, successCallback, [errorCallback])
+### TakePicture(opciones, devolución de llamada exitosa, [devolución de llamada de error])
 
-<info>Take the picture. If width and height are not specified or are 0 it will use the defaults. If width and height are specified, it will choose a supported photo size that is closest to width and height specified and has closest aspect ratio to the preview. The argument `quality` defaults to `85` and specifies the quality/compression value: `0=max compression`, `100=max quality`.</info><br/>
+<info>Toma la foto. Si el ancho y la altura no se especifican o son 0, se usarán los valores predeterminados. Si se especifican el ancho y el alto, elegirá un tamaño de foto admitido que sea el más cercano al ancho y el alto especificados y tenga la relación de aspecto más cercana a la vista previa. El argumento `calidad` por defecto es `85` y especifica el valor de calidad/compresión: `0=compresión máxima`, `100=calidad máxima`.</info><br/>
 
 ```javascript
-CameraPreview.takePicture({width:640, height:640, quality: 85}, function(base64PictureData|filePath) {
+CameraPreview.takePicture({ancho:640, alto:640, calidad: 85}, function(base64PictureData|filePath) {
   /*
-    if the storeToFile option is false (the default), then base64PictureData is returned.
-    base64PictureData is base64 encoded jpeg image. Use this data to store to a file or upload.
-    Its up to the you to figure out the best way to save it to disk or whatever for your application.
+    si la opción storeToFile es falsa (el valor predeterminado), se devuelve base64PictureData.
+    base64PictureData es una imagen jpeg codificada en base64. Utilice estos datos para almacenarlos en un archivo o cargarlos.
+    Depende de usted descubrir la mejor manera de guardarlo en el disco o lo que sea para su aplicación.
   */
 
   /*
-    if the storeToFile option is set to true, then a filePath is returned. Note that the file
-    is stored in temporary storage, so you should move it to a permanent location if you
-    don't want the OS to remove it arbitrarily.
+    si la opción storeToFile se establece en true, se devuelve una ruta de archivo. Tenga en cuenta que el archivo
+    se almacena en almacenamiento temporal, por lo que debe moverlo a una ubicación permanente si
+    no quiero que el sistema operativo lo elimine arbitrariamente.
   */
 
-  // One simple example is if you are going to use it inside an HTML img src attribute then you would do the following:
-  imageSrcData = 'data:image/jpeg;base64,' + base64PictureData;
-  $('img#my-img').attr('src', imageSrcData);
+  // Un ejemplo simple es si lo va a usar dentro de un atributo HTML img src, entonces haría lo siguiente:
+  imageSrcData = 'datos:imagen/jpeg;base64,' + base64PictureData;
+  $('img#mi-img').attr('src', imageSrcData);
 });
 
-// OR if you want to use the default options.
+// O si desea utilizar las opciones predeterminadas.
 
-CameraPreview.takePicture(function(base64PictureData){
-  /* code here */
+CameraPreview.takePicture(función(base64PictureData){
+  /* código aquí */
 });
 ```
 
-### takeSnapshot(options, successCallback, [errorCallback])
+### tomar instantánea (opciones, devolución de llamada exitosa, [devolución de llamada de error])
 
-<info>Take snapshot of the camera preview. The resulting image will be the same size as specified in `startCamera` options. The argument `quality` defaults to `85` and specifies the quality/compression value: `0=max compression`, `100=max quality`.</info><br/>
+<info>Tome una instantánea de la vista previa de la cámara. La imagen tendrá el mismo tamaño que el especificado en las opciones de `startCamera`. El argumento `calidad` por defecto es `85` y especifica el valor de calidad/compresión: `0=compresión máxima`, `100=calidad máxima`.</info><br/>
 
 ```javascript
-CameraPreview.takeSnapshot({quality: 85}, function(base64PictureData){
+CameraPreview.takeSnapshot({calidad: 85}, función(base64PictureData){
   /*
-    base64PictureData is base64 encoded jpeg image. Use this data to store to a file or upload.
+    base64PictureData es una imagen jpeg codificada en base64. Utilice estos datos para almacenarlos en un archivo o cargarlos.
   */
 
-  // One simple example is if you are going to use it inside an HTML img src attribute then you would do the following:
-  imageSrcData = 'data:image/jpeg;base64,' +base64PictureData;
-  $('img#my-img').attr('src', imageSrcData);
+  // Un ejemplo simple es si lo va a usar dentro de un atributo HTML img src, entonces haría lo siguiente:
+  imageSrcData = 'datos:imagen/jpeg;base64,' +base64PictureData;
+  $('img#mi-img').attr('src', imageSrcData);
 });
 ```
 
 ### getSupportedFocusModes(cb, [errorCallback])
 
-<info>Get focus modes supported by the camera device currently started. Returns an array containing supported focus modes. See <code>[FOCUS_MODE](#camera_Settings.FocusMode)</code> for possible values that can be returned.</info><br/>
+<info>Obtenga modos de enfoque admitidos por el dispositivo de cámara actualmente iniciado. Devuelve una matriz que contiene los modos de enfoque admitidos. Consulte <code>[FOCUS_MODE](#camera_Settings.FocusMode)</code> para conocer los posibles valores que se pueden devolver.</info><br/>
 
 ```javascript
 CameraPreview.getSupportedFocusModes(function(focusModes){
@@ -219,8 +219,8 @@ CameraPreview.getSupportedFocusModes(function(focusModes){
 
 ### setFocusMode(focusMode, [successCallback, errorCallback])
 
-<info>Set the focus mode for the camera device currently started.</info><br/>
-* `focusMode` - <code>[FOCUS_MODE](#camera_Settings.FocusMode)</code>
+<info>Establece el modo de enfoque para el dispositivo de la cámara actualmente iniciado.</info><br/>
+* `focusMode` - <código>[FOCUS_MODE](#camera_Settings.FocusMode)</code>
 
 ```javascript
 CameraPreview.setFocusMode(CameraPreview.FOCUS_MODE.CONTINUOUS_PICTURE);
@@ -228,7 +228,7 @@ CameraPreview.setFocusMode(CameraPreview.FOCUS_MODE.CONTINUOUS_PICTURE);
 
 ### getFocusMode(cb, [errorCallback])
 
-<info>Get the focus mode for the camera device currently started. Returns a string representing the current focus mode.</info>See <code>[FOCUS_MODE](#camera_Settings.FocusMode)</code> for possible values that can be returned.</info><br/>
+<info>Obtenga el modo de enfoque para el dispositivo de cámara actualmente iniciado. Devuelve una cadena que representa el modo de enfoque actual.</info>Consulte <code>[FOCUS_MODE](#camera_Settings.FocusMode)</code> para conocer los posibles valores que se pueden devolver.</info><br/>
 
 ```javascript
 CameraPreview.getFocusMode(function(currentFocusMode){
@@ -238,7 +238,7 @@ CameraPreview.getFocusMode(function(currentFocusMode){
 
 ### getSupportedFlashModes(cb, [errorCallback])
 
-<info>Get the flash modes supported by the camera device currently started. Returns an array containing supported flash modes. See <code>[FLASH_MODE](#camera_Settings.FlashMode)</code> for possible values that can be returned</info><br/>
+<info>Obtenga los modos de flash admitidos por el dispositivo de la cámara iniciado actualmente. Devuelve una matriz que contiene los modos flash admitidos. Consulte <code>[FLASH_MODE](#camera_Settings.FlashMode)</code> para conocer los posibles valores que se pueden devolver</info><br/>
 
 ```javascript
 CameraPreview.getSupportedFlashModes(function(flashModes){
@@ -250,7 +250,7 @@ CameraPreview.getSupportedFlashModes(function(flashModes){
 
 ### setFlashMode(flashMode, [successCallback, errorCallback])
 
-<info>Set the flash mode. See <code>[FLASH_MODE](#camera_Settings.FlashMode)</code> for details about the possible values for flashMode.</info><br/>
+<info>Establece el modo de flash. Consulte <code>[FLASH_MODE](#camera_Settings.FlashMode)</code> para obtener detalles sobre los posibles valores para flashMode.</info><br/>
 
 ```javascript
 CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.ON);
@@ -258,7 +258,7 @@ CameraPreview.setFlashMode(CameraPreview.FLASH_MODE.ON);
 
 ### getFlashMode(cb, [errorCallback])
 
-<info>Get the flash mode for the camera device currently started. Returns a string representing the current flash mode.</info>See <code>[FLASH_MODE](#camera_Settings.FlashMode)</code> for possible values that can be returned</info><br/>
+<info>Obtenga el modo de flash para el dispositivo de la cámara actualmente iniciado. Devuelve una cadena que representa el modo de flash actual.</info>Consulte <code>[FLASH_MODE](#camera_Settings.FlashMode)</code> para conocer los posibles valores que se pueden devolver</info><br/>
 
 ```javascript
 CameraPreview.getFlashMode(function(currentFlashMode){
@@ -268,7 +268,7 @@ CameraPreview.getFlashMode(function(currentFlashMode){
 
 ### getHorizontalFOV(cb, [errorCallback])
 
-<info>Get the Horizontal FOV for the camera device currently started. Returns a string of a float that is the FOV of the camera in Degrees. </info><br/>
+<info>Obtenga el FOV horizontal para el dispositivo de cámara actualmente iniciado. Devuelve una cadena de un flotador que es el FOV de la cámara en Grados. </info><br/>
 
 ```javascript
 CameraPreview.getHorizontalFOV(function(getHorizontalFOV){
@@ -278,9 +278,9 @@ CameraPreview.getHorizontalFOV(function(getHorizontalFOV){
 
 ### getSupportedColorEffects(cb, [errorCallback])
 
-*Currently this feature is for Android only. A PR for iOS support would be happily accepted*
+*Actualmente, esta característica es solo para Android. Un PR para el soporte de iOS sería felizmente aceptado *
 
-<info>Get color modes supported by the camera device currently started. Returns an array containing supported color effects (strings). See <code>[COLOR_EFFECT](#camera_Settings.ColorEffect)</code> for possible values that can be returned.</info><br/>
+<info>Obtenga los modos de color admitidos por el dispositivo de cámara actualmente iniciado. Devuelve una matriz que contiene efectos de color admitidos (cadenas). Consulte <code>[COLOR_EFFECT](#camera_Settings.ColorEffect)</code> para conocer los posibles valores que se pueden devolver.</info><br/>
 
 ```javascript
 CameraPreview.getSupportedColorEffects(function(colorEffects){
@@ -293,7 +293,7 @@ CameraPreview.getSupportedColorEffects(function(colorEffects){
 
 ### setColorEffect(colorEffect, [successCallback, errorCallback])
 
-<info>Set the color effect. See <code>[COLOR_EFFECT](#camera_Settings.ColorEffect)</code> for details about the possible values for colorEffect.</info><br/>
+<info>Establecer el efecto de color. Consulte <code>[COLOR_EFFECT](#camera_Settings.ColorEffect)</code> para obtener detalles sobre los valores posibles para colorEffect.</info><br/>
 
 ```javascript
 CameraPreview.setColorEffect(CameraPreview.COLOR_EFFECT.NEGATIVE);
@@ -301,7 +301,7 @@ CameraPreview.setColorEffect(CameraPreview.COLOR_EFFECT.NEGATIVE);
 
 ### setZoom(zoomMultiplier, [successCallback, errorCallback])
 
-<info>Set the zoom level for the camera device currently started. zoomMultipler option accepts an integer. Zoom level is initially at 1</info><br/>
+<info>Establezca el nivel de zoom para el dispositivo de cámara actualmente iniciado. La opción zoomMultipler acepta un número entero. El nivel de zoom está inicialmente en 1</info><br/>
 
 ```javascript
 CameraPreview.setZoom(2);
@@ -309,7 +309,7 @@ CameraPreview.setZoom(2);
 
 ### getZoom(cb, [errorCallback])
 
-<info>Get the current zoom level for the camera device currently started. Returns an integer representing the current zoom level.</info><br/>
+<info>Obtenga el nivel de zoom actual para el dispositivo de cámara actualmente iniciado. Devuelve un número entero que representa el nivel de zoom actual.</info><br/>
 
 ```javascript
 CameraPreview.getZoom(function(currentZoom){
@@ -319,7 +319,7 @@ CameraPreview.getZoom(function(currentZoom){
 
 ### getMaxZoom(cb, [errorCallback])
 
-<info>Get the maximum zoom level for the camera device currently started. Returns an integer representing the manimum zoom level.</info><br/>
+<info>Obtenga el nivel de zoom máximo para el dispositivo de cámara actualmente iniciado. Devuelve un número entero que representa el nivel de zoom mínimo.</info><br/>
 
 ```javascript
 CameraPreview.getMaxZoom(function(maxZoom){
@@ -329,7 +329,7 @@ CameraPreview.getMaxZoom(function(maxZoom){
 
 ### getSupportedWhiteBalanceModes(cb, [errorCallback])
 
-<info>Returns an array with supported white balance modes for the camera device currently started. See <code>[WHITE_BALANCE_MODE](#camera_Settings.WhiteBalanceMode)</code> for details about the possible values returned.</info><br/>
+<info>Devuelve una matriz con los modos de balance de blancos admitidos para el dispositivo de cámara actualmente iniciado. Consulte <code>[WHITE_BALANCE_MODE](#camera_Settings.WhiteBalanceMode)</code> para obtener detalles sobre los posibles valores devueltos.</info><br/>
 
 ```javascript
 CameraPreview.getSupportedWhiteBalanceModes(function(whiteBalanceModes){
@@ -339,16 +339,16 @@ CameraPreview.getSupportedWhiteBalanceModes(function(whiteBalanceModes){
 
 ### getWhiteBalanceMode(cb, [errorCallback])
 
-<info>Get the curent white balance mode of the camera device currently started. See <code>[WHITE_BALANCE_MODE](#camera_Settings.WhiteBalanceMode)</code> for details about the possible values returned.</info><br/>
+<info>Obtenga el modo de balance de blancos actual del dispositivo de la cámara actualmente iniciado. Consulte <code>[WHITE_BALANCE_MODE](#camera_Settings.WhiteBalanceMode)</code> para obtener detalles sobre los posibles valores devueltos.</info><br/>
 
 ```javascript
-CameraPreview.getWhiteBalanceMode(function(whiteBalanceMode){
-  console.log(whiteBalanceMode);
+CameraPreview.getWhiteBalanceMode(función(whiteBalanceMode){
+  consola.log(modoequilibrioblanco);
 });
 ```
 ### setWhiteBalanceMode(whiteBalanceMode, [successCallback, errorCallback])
 
-<info>Set the white balance mode for the camera device currently started. See <code>[WHITE_BALANCE_MODE](#camera_Settings.WhiteBalanceMode)</code> for details about the possible values for whiteBalanceMode.</info><br/>
+<info>Establezca el modo de balance de blancos para el dispositivo de cámara actualmente iniciado. Consulte <code>[WHITE_BALANCE_MODE](#camera_Settings.WhiteBalanceMode)</code> para obtener detalles sobre los valores posibles para whiteBalanceMode.</info><br/>
 
 ```javascript
 CameraPreview.setWhiteBalanceMode(CameraPreview.WHITE_BALANCE_MODE.CLOUDY_DAYLIGHT);
@@ -356,90 +356,90 @@ CameraPreview.setWhiteBalanceMode(CameraPreview.WHITE_BALANCE_MODE.CLOUDY_DAYLIG
 
 ### getExposureModes(cb, [errorCallback])
 
-<info>Returns an array with supported exposure modes for the camera device currently started. See <code>[EXPOSURE_MODE](#camera_Settings.ExposureMode)</code> for details about the possible values returned.</info><br/>
+<info>Devuelve una matriz con modos de exposición admitidos para el dispositivo de cámara actualmente iniciado. Consulte <code>[EXPOSURE_MODE](#camera_Settings.ExposureMode)</code> para obtener detalles sobre los posibles valores devueltos.</info><br/>
 
 ```javascript
 CameraPreview.getExposureModes(function(exposureModes){
-  console.log(exposureModes);
+  console.log(modos de exposición);
 });
 ```
 
 ### getExposureMode(cb, [errorCallback])
 
-<info>Get the curent exposure mode of the camera device currently started. See <code>[EXPOSURE_MODE](#camera_Settings.ExposureMode)</code> for details about the possible values returned.</info><br/>
+<info>Obtenga el modo de exposición actual del dispositivo de la cámara actualmente iniciado. Consulte <code>[EXPOSURE_MODE](#camera_Settings.ExposureMode)</code> para obtener detalles sobre los posibles valores devueltos.</info><br/>
 
 ```javascript
 CameraPreview.getExposureMode(function(exposureMode){
-  console.log(exposureMode);
+  consola.log(modoexposición);
 });
 ```
-### setExposureMode(exposureMode, [successCallback, errorCallback])
+### establecer el modo de exposición (modo de exposición, [devolución de llamada exitosa, devolución de llamada de error])
 
-<info>Set the exposure mode for the camera device currently started. See <code>[EXPOSURE_MODE](#camera_Settings.ExposureMode)</code> for details about the possible values for exposureMode.</info><br/>
+<info>Establece el modo de exposición para el dispositivo de la cámara actualmente iniciado. Consulte <code>[EXPOSURE_MODE](#camera_Settings.ExposureMode)</code> para obtener detalles sobre los valores posibles para el modo de exposición.</info><br/>
 
 ```javascript
-CameraPreview.setExposureMode(CameraPreview.EXPOSURE_MODE.CONTINUOUS);
+CameraPreview.setExposureMode(CameraPreview.EXPOSURE_MODE.CONTINUO);
 ```
 ### getExposureCompensationRange(cb, [errorCallback])
 
-<info>Get the minimum and maximum exposure compensation for the camera device currently started. Returns an object containing min and max integers.</info><br/>
+<info>Obtenga la compensación de exposición mínima y máxima para el dispositivo de cámara iniciado actualmente. Devuelve un objeto que contiene números enteros mínimo y máximo.</info><br/>
 
 ```javascript
-CameraPreview.getExposureCompensationRange(function(expoxureRange){
-  console.log("min: " + exposureRange.min);
-  console.log("max: " + exposureRange.max);
+CameraPreview.getExposureCompensationRange(función(expoxureRange){
+  console.log("min: " + rango de exposición.min);
+  console.log("max: " + rango de exposición.max);
 });
 ```
 ### getExposureCompensation(cb, [errorCallback])
 
-<info>Get the current exposure compensation for the camera device currently started. Returns an integer representing the current exposure compensation.</info><br/>
+<info>Obtenga la compensación de exposición actual para el dispositivo de cámara actualmente iniciado. Devuelve un número entero que representa la compensación de exposición actual.</info><br/>
 
 ```javascript
 CameraPreview.getExposureCompensation(function(expoxureCompensation){
-  console.log(exposureCompensation);
+  console.log(exposiciónCompensación);
 });
 ```
 ### setExposureCompensation(exposureCompensation, [successCallback, errorCallback])
 
-<info>Set the exposure compensation for the camera device currently started. exposureCompensation accepts an integer. if exposureCompensation is lesser than the minimum exposure compensation, it is set to the minimum. if exposureCompensation is greater than the maximum exposure compensation, it is set to the maximum. (see getExposureCompensationRange() to get the minumum an maximum exposure compensation).</info><br/>
+<info>Establezca la compensación de exposición para el dispositivo de cámara iniciado actualmente. exposiciónCompensación acepta un número entero. si la compensación de exposición es menor que la compensación de exposición mínima, se establece al mínimo. si la compensación de exposición es mayor que la compensación de exposición máxima, se establece al máximo. (consulte getExposureCompensationRange() para obtener la compensación de exposición mínima y máxima).</info><br/>
 
 ```javascript
 CameraPreview.setExposureCompensation(-2);
 CameraPreview.setExposureCompensation(3);
 ```
 
-### setPreviewSize([dimensions, successCallback, errorCallback])
+### setPreviewSize([dimensiones, exitCallback, errorCallback])
 
-<info>Change the size of the preview window.</info><br/>
+<info>Cambiar el tamaño de la ventana de vista previa.</info><br/>
 
 ```javascript
-CameraPreview.setPreviewSize({width: window.screen.width, height: window.screen.height});
+CameraPreview.setPreviewSize({ancho: ventana.pantalla.ancho, alto: ventana.pantalla.alto});
 ```
 
 ### getSupportedPictureSizes(cb, [errorCallback])
 
 ```javascript
-CameraPreview.getSupportedPictureSizes(function(dimensions){
-  // note that the portrait version, width and height swapped, of these dimensions are also supported
-  dimensions.forEach(function(dimension) {
-    console.log(dimension.width + 'x' + dimension.height);
+CameraPreview.getSupportedPictureSizes(función(dimensiones){
+  // tenga en cuenta que la versión vertical, ancho y alto intercambiados, de estas dimensiones también son compatibles
+  dimensiones.forEach(función(dimensión) {
+    console.log(dimensión.ancho + 'x' + dimensión.altura);
   });
 });
 ```
 
 ### getCameraCharacteristics(cb, [errorCallback])
 
-*Currently this feature is for Android only. A PR for iOS support would be happily accepted*
+*Actualmente, esta característica es solo para Android. Un PR para el soporte de iOS sería felizmente aceptado *
 
-<info>Get the characteristics of all available cameras. Returns a JSON object representing the characteristics of all available cameras.</info><br/>
+<info>Conoce las características de todas las cámaras disponibles. Devuelve un objeto JSON que representa las características de todas las cámaras disponibles.</info><br/>
 
 ```javascript
-CameraPreview.getCameraCharacteristics(function(characteristics){
-  console.log(characteristics);
+CameraPreview.getCameraCharacteristics(función(características){
+  consola.log(características);
 });
 ```
 
-Example Characteristics:
+Características del ejemplo:
 
 ```
 {
@@ -477,92 +477,93 @@ Example Characteristics:
 
 ### tapToFocus(xPoint, yPoint, [successCallback, errorCallback])
 
-<info>Set specific focus point. Note, this assumes the camera is full-screen.</info><br/>
+<info>Establece un punto de enfoque específico. Tenga en cuenta que esto supone que la cámara está en pantalla completa.</info><br/>
 
 ```javascript
-let xPoint = event.x;
-let yPoint = event.y
+let xPunto = evento.x;
+let yPunto = evento.y
 CameraPreview.tapToFocus(xPoint, yPoint);
 ```
 
-### onBackButton(successCallback, [errorCallback])
+### onBackButton(devolución de llamada exitosa, [devolución de llamada de error])
 
-<info>Callback event for the back button tap</info><br/>
+<info>Evento de devolución de llamada para tocar el botón Atrás</info><br/>
 
 ```javascript
-CameraPreview.onBackButton(function() {
-  console.log('Back button pushed');
+CameraPreview.onBackButton(función() {
+  console.log('Botón Atrás presionado');
 });
 ```
 
-### getBlob(url, [successCallback, errorCallback])
+### getBlob(url, [devolución de llamada exitosa, devolución de llamada de error])
 
-When working with local files you may want to display those on certain containers like canvas,
-given that file:// is not always a valid url type, you need to first convert it explicitly to
-a blob, before you push it further into the display side. The function getBlob will do the
-proper conversion for you, and if succedeed will pass the content on it's callback function as
-first argument.
+Cuando trabaje con archivos locales, es posible que desee mostrarlos en ciertos contenedores como lienzo,
+dado que file:// no siempre es un tipo de URL válido, primero debe convertirlo explícitamente a
+una gota, antes de empujarla más hacia el lado de la pantalla. La función getBlob hará el
+conversión adecuada para usted, y si tiene éxito, pasará el contenido en su función de devolución de llamada como
+primer argumento.
 
 ```javascript
 
-function displayImage(content) {
-  var ctx = $("canvas").getContext('2d');
+function mostrarImagen(contenido) {
+  var ctx = $("lienzo").getContext('2d');
 
-  img.onload = function(){
+  img.onload = función(){
     ctx.drawImage(img, 0, 0)
   }
 
   img.src = URL.createObjectURL(blob);
 }
 
-function takePicture() {
-  CameraPreview.takePicture({width: app.dimension.width, height: app.dimension.height}, function(data){
+función tomarFoto() {
+  CameraPreview.takePicture({ancho: aplicación.dimensión.ancho, altura: aplicación.dimensión.altura}, función (datos){
     if (cordova.platformId === 'android') {
-      CameraPreview.getBlob('file://' + data, function(image) {
-        displayImage(image);
+      CameraPreview.getBlob('archivo://' + datos, función(imagen) {
+        mostrarImagen(imagen);
       });
-    } else {
-      displayImage('data:image/jpeg;base64,' + data);
+    } demás {
+      mostrarImagen('datos:imagen/jpeg;base64,' + datos);
     }
   });
 }
+
 ```
 
 ### startRecordVideo(options, cb, [errorCallback])
 
-*Currently this feature is for Android only. A PR for iOS support would be happily accepted*
+*Actualmente, esta característica es solo para Android. Un PR para el soporte de iOS sería felizmente aceptado *
 
-<info>Start recording video to the cache.</info><br/>
+<info>Comience a grabar video en el caché.</info><br/>
 
 ```javascript
-var opts = {
-  cameraDirection: CameraPreview.CAMERA_DIRECTION.BACK,
-  width: (window.screen.width / 2),
-  height: (window.screen.height / 2),
-  quality: 60,
-  withFlash: false
+var opciones = {
+   dirección de la cámara: CameraPreview.CAMERA_DIRECTION.BACK,
+   ancho: (ventana.pantalla.ancho / 2),
+   altura: (ventana.pantalla.altura / 2),
+   calidad: 60,
+   con Flash: falso
 }
 
-CameraPreview.startRecordVideo(opts, function(filePath){
-  console.log(filePath)    
+CameraPreview.startRecordVideo(opciones, función(filePath){
+   consola.log(ruta del archivo)
 });
 ```
 
-### stopRecordVideo(cb, [errorCallback])
+### detenerGrabarVideo(cb, [errorCallback])
 
-*Currently this feature is for Android only. A PR for iOS support would be happily accepted*
+*Actualmente, esta característica es solo para Android. Un PR para el soporte de iOS sería felizmente aceptado *
 
-<info>Stop recording video and return video file path</info><br/>
+<info>Detener la grabación de video y devolver la ruta del archivo de video</info><br/>
 
 ```javascript
-CameraPreview.stopRecordVideo(function(filePath) {
-  console.log(filePath);
+CameraPreview.stopRecordVideo(función(filePath) {
+   consola.log(ruta del archivo);
 });
 ```
 
-# Settings
+# Ajustes
 
-<a name="camera_Settings.FocusMode"></a>
+<a name="Configuración_de_la_cámara.ModoEnfoque"></a>
 
 ### FOCUS_MODE
 
@@ -597,7 +598,7 @@ CameraPreview.stopRecordVideo(function(filePath) {
 
 ### CAMERA_DIRECTION
 
-<info>Camera direction settings:</info><br/>
+<info>Configuración de la dirección de la cámara:</info><br/>
 
 | Name | Type | Default |
 | --- | --- | --- |
@@ -608,7 +609,7 @@ CameraPreview.stopRecordVideo(function(filePath) {
 
 ### COLOR_EFFECT
 
-<info>Color effect settings:</info><br/>
+<info>Configuración de efectos de color:</info><br/>
 
 | Name | Type | Default | Note |
 | --- | --- | --- | --- |
@@ -626,7 +627,7 @@ CameraPreview.stopRecordVideo(function(filePath) {
 
 ### EXPOSURE_MODE
 
-<info>Exposure mode settings:</info><br/>
+<info>Configuración del modo de exposición:</info><br/>
 
 | Name | Type | Default | Note |
 | --- | --- | --- | --- |
@@ -635,13 +636,13 @@ CameraPreview.stopRecordVideo(function(filePath) {
 | CUSTOM | string | custom | |
 | LOCK | string | lock | IOS Only |
 
-Note: Use AUTO to allow the device automatically adjusts the exposure once and then changes the exposure mode to LOCK.
+Nota: Use AUTO para permitir que el dispositivo ajuste automáticamente la exposición una vez y luego cambie el modo de exposición a BLOQUEO.
 
 <a name="camera_Settings.WhiteBalanceMode"></a>
 
 ### WHITE_BALANCE_MODE
 
-<info>White balance mode settings:</info><br/>
+<info>Configuración del modo de balance de blancos:</info><br/>
 
 | Name | Type | Default | Note |
 | --- | --- | --- | --- |
@@ -658,14 +659,14 @@ Note: Use AUTO to allow the device automatically adjusts the exposure once and t
 
 # Sample App
 
-<a href="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview-sample-app">cordova-plugin-camera-preview-sample-app</a> for a complete working Cordova example for Android and iOS platforms.
+<a href="https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview-sample-app">cordova-plugin-camera-preview-sample-app</a> para un ejemplo completo de Cordova en funcionamiento para las plataformas Android e iOS.
 
-# Screenshots
+# capturas de pantalla
 
 <img src="https://raw.githubusercontent.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/master/img/android-1.png"/> <img hspace="20" src="https://raw.githubusercontent.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview/master/img/android-2.png"/>
 
-# Credits
+# Créditos
 
-Maintained by [Weston Ganger](https://westonganger.com) - [@westonganger](https://github.com/westonganger)
+Mantenido por [Weston Ganger](https://westonganger.com) - [@westonganger](https://github.com/westonganger)
 
-Created by Marcel Barbosa Pinto [@mbppower](https://github.com/mbppower)
+Creado por Marcel Barbosa Pinto [@mbppower](https://github.com/mbppower)
